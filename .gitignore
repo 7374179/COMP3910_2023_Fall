@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings/
+target/
+bin/
+*.class
+*.war
+.metadata
+.DS_Store
+.wildfly
+log/
+.mvn/
