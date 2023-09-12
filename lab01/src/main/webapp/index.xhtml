@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+   <h:head>
+      <title>Welcome</title>	
+   </h:head>
+   <h:body>
+      <h:form>
+         <h3>Please enter your first and last name.</h3>   
+         <table>
+            <tr>
+               <td>First Name:</td>
+               <td><h:inputText value="#{user.firstName}"/></td>
+            </tr>
+            <tr>
+               <td>Last Name:</td>
+               <td><h:inputText value="#{user.lastName}"/></td>
+            </tr>
+         </table>
+         <p><h:commandButton value="Submit" action="welcome"/></p>
+      </h:form>
+   </h:body>
+</html>
