@@ -1,0 +1,81 @@
+body
+{
+	/* width: 800px;  */
+	/* margin: 0 10%;  */
+	background-color: #F8F8F8;
+}
+
+#heading {
+    background-color: rgb(235, 235, 237); /* Green background */
+    color: #000000; /* White text */
+    padding: 10px 15px; /* Some padding */
+    text-align: center; /* Centered text */
+    border-bottom: 5px solid #000000; /* Blue border at the bottom */
+    width: 100%;
+}
+
+
+.msgs-bold {
+    font-weight: bold;
+}
+
+.submit-box {
+	background-color: rgb(235, 235, 237);
+	border: #F8F8F8;
+}
+
+
+
+#navation {
+    background-color: #f9f9f9; /* Light gray background */
+    border-right: 1px solid #ddd; /* Gray border on the right */
+    width: 10%; /* Taking up 20% of its container's width */
+    height: 100vh; /* Full height */
+    position: fixed; /* Make it stick to the side */
+    top: 0; /* Start from the top */
+    left: 0; /* Start from the left */
+    overflow-y: auto; /* Add scroll if needed */
+    padding-top: 20px; /* Some spacing on top */
+}
+
+.navigation p {
+    padding: 10px 15px; /* Some padding */
+    text-decoration: none; /* No underline */
+    font-size: 20px; /* Increase font size */
+    color: black; /* Black text */
+    display: block; /* Make the links appear below each other */
+}
+
+.navigation p:hover {
+    background-color: #ddd; /* Gray background on hover */
+    color: black; /* Black text on hover */
+}
+
+/* Content styles */
+#content {
+    padding: 15px; /* Some padding */
+    padding-left: 2px;
+}
+
+/* DataTable styles */
+table {
+    border-collapse: collapse;
+    width: 140%;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 2px;
+}
+
+/* Header styles */
+table th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+td.column-name {
+    min-width: 150px; /* 예시 값, 실제로는 콘텐츠에 맞게 조절해야 합니다 */
+}
