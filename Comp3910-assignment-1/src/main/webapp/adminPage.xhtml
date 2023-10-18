@@ -70,10 +70,10 @@
 						<p:column headerText="Password">
 							<p:cellEditor>
 								<f:facet name="output">
-									<h:outputText value="#{employeeManager.getPasswordForUser(employee.userName)}" />
+									<h:outputText value="#{changeUserPassword.newPassword}" />
 								</f:facet>
 								<f:facet name="input">
-									<h:inputText value="#{employee.userName}" />
+									<h:inputText value="#{changeUserPassword.newPassword}" />
 								</f:facet>
 							</p:cellEditor>
 						</p:column>

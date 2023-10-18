@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Properties;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
@@ -14,7 +15,7 @@ import java.io.IOException;
 
 
 @Named
-@SessionScoped
+@ApplicationScoped
 public class ChangeUserPassword implements Serializable {
 	private String currentPassword;
 	private String newPassword;

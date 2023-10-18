@@ -345,6 +345,7 @@ public class TimesheetRow implements java.io.Serializable {
      * @throws IllegalArgumentException if charges < 0 or > 24
      */
     public void setDecihours(int[] charges) {
+    	System.out.println("set");
         for (float charge : charges) {
             if (charge < 0 || charge > Timesheet.DECIHOURS_IN_DAY) {
                 throw new IllegalArgumentException("charge is out of " 
@@ -386,5 +387,18 @@ public class TimesheetRow implements java.io.Serializable {
                 + Arrays.toString(getHours());
     }
     
-
+    public float getSaturday() {return getHour(SAT);}
+    public void setSaturday(float charge) {setHour(SAT, charge);}
+    public float getSunday() {return getHour(SUN);}
+    public void setSunday(float charge) {setHour(SUN, charge);}    
+    public float getMonday() {return getHour(MON);}
+    public void setMonday(float charge) {setHour(MON, charge);}
+    public float getTuesday() {return getHour(TUE);}
+    public void setTuesday(float charge) {setHour(TUE, charge);}   
+    public float getWednesday() {return getHour(WED);}
+    public void setWednesday(float charge) {setHour(WED, charge);}    
+    public float getThursday() {return getHour(THU);}
+    public void setThursday(float charge) {setHour(THU, charge);}    
+    public float getFriday() {return getHour(FRI);}
+    public void setFriday(float charge) {setHour(FRI, charge);}      
 }

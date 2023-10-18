@@ -32,39 +32,24 @@
 						<p:panelGrid layout="grid" columns="2">
 							<p:panel>
 								<h:outputText value="#{msgs.eNumber}" />
-								<h:outputText
-									value="#{employeeManager.currentEmployee.empNumber}" />
+								<h:outputText value="#{employeeManager.currentEmployee.empNumber}" />
 							</p:panel>
-
 							<p:panel>
 								<h:outputText value="#{msgs.weekNumber}" />
-								<h:outputText
-									value="#{timesheet.weekNumber}" />
+								<h:outputText value="#{timesheet.weekNumber}" />
 							</p:panel>
-
 							<p:panel>
 								<h:outputText value="#{msgs.name}" />
 								<h:outputText value="#{employeeManager.currentEmployee.name}" />
 							</p:panel>
-
 							<p:panel>
 								<h:outputText value="#{msgs.weekEnding}" />
-								<h:outputText
-									value="#{timesheet.weekEnding}" />
+								<h:outputText value="#{timesheet.weekEnding}" />
 							</p:panel>
-
 						</p:panelGrid>
 					</div>
-
-
-
-
-					<p:dataTable id="timesheetTable"
-						value="#{timesheetManager.tsrsBig}" var="row" scrollable="true"
-						scrollHeight="400" editable="true">
-
-
-
+					
+					<p:dataTable id="timesheetTable" value="#{timesheetManager.tsrsBig}" var="row" scrollable="true" scrollHeight="400" editable="true">
 						<p:column style="width:50px">
 							<p:rowEditor />
 						</p:column>
@@ -75,9 +60,7 @@
 									<h:outputText value="#{row.projectId}" />
 								</f:facet>
 								<f:facet name="input">
-									<h:inputText id="projectID" value="#{row.projectId}" size="2"
-										converterMessage="must be numeric" required="true"
-										requiredMessage="#{msgs.requiredField}">
+									<h:inputText id="projectID" value="#{row.projectId}" size="2" converterMessage="must be numeric" required="true" requiredMessage="#{msgs.requiredField}">
 										<f:convertNumber integerOnly="true" type="number" />
 									</h:inputText>
 								</f:facet>
@@ -87,24 +70,18 @@
 								<h:outputText value="Total" />
 							</f:facet>
 						</p:column>
-
 						<p:column width="80" headerText="#{msgs.workPackage}">
 							<p:cellEditor>
 								<f:facet name="output">
-									<h:outputText value="#{row.workPackageId}"
-										style="font-weight: bold" />
+									<h:outputText value="#{row.workPackageId}" style="font-weight: bold" />
 								</f:facet>
 								<f:facet name="input">
-									<h:inputText id="wp" value="#{row.workPackageId}" size="4"
-										required="true" requiredMessage="#{msgs.requiredField}" />
+									<h:inputText id="wp" value="#{row.workPackageId}" size="4" required="true" requiredMessage="#{msgs.requiredField}" />
 								</f:facet>
 							</p:cellEditor>
 							<h:message for="wp" styleClass="errorMessage" />
 						</p:column>
-
-
 						<p:column width="40" headerText="#{msgs.total}">
-
 							<f:facet name="header">
 								<h:outputText value="#{msgs.total}" style="font-weight: bold" />
 							</f:facet>
@@ -113,20 +90,15 @@
 								<h:outputText value="#{timesheetManager.getTotalSum()}" />
 							</f:facet>
 						</p:column>
-
-
 						<p:column width="60" headerText="#{msgs.saturday}">
 							<p:cellEditor>
 								<f:facet name="output">
-									<h:outputText value="#{row.hours[0]}" style="font-weight: bold" />
+									<h:outputText value="#{row.saturday}" style="font-weight: bold" />
 								</f:facet>
 								<f:facet name="input">
-									<h:inputText id="sat" value="#{row.hours[0]}" size="2"
-										converterMessage="must be a number"
-										validatorMessage="must be between 0 and 24">
+									<h:inputText id="sat" value="#{row.saturday}" size="2" converterMessage="must be a number" validatorMessage="must be between 0 and 24">										
 										<f:convertNumber type="number" />
 										<f:validateDoubleRange minimum="0" maximum="24" />
-
 									</h:inputText>
 								</f:facet>
 							</p:cellEditor>
@@ -135,18 +107,13 @@
 							</f:facet>
 							<h:message for="sat" styleClass="errorMessage" />
 						</p:column>
-
-
 						<p:column width="60" headerText="#{msgs.sunday}">
 							<p:cellEditor>
 								<f:facet name="output">
-									<h:outputText value="#{row.hours[1]}" style="font-weight: bold" />
+									<h:outputText value="#{row.sunday}" style="font-weight: bold" />
 								</f:facet>
 								<f:facet name="input">
-
-									<h:inputText id="sun" value="#{row.hours[1]}" size="2"
-										converterMessage="must be a number"
-										validatorMessage="must be between 0 and 24">
+									<h:inputText id="sun" value="#{row.sunday}" size="2" converterMessage="must be a number" validatorMessage="must be between 0 and 24">
 									</h:inputText>
 									<h:message for="sun" styleClass="errorMessage" />
 								</f:facet>
@@ -155,18 +122,13 @@
 								<h:outputText value="#{timesheetManager.getTotalHoursForDay(1)}" />
 							</f:facet>
 						</p:column>
-
-
 						<p:column width="60" headerText="#{msgs.monday}">
 							<p:cellEditor>
 								<f:facet name="output">
-									<h:outputText value="#{row.hours[2]}" style="font-weight: bold" />
+									<h:outputText value="#{row.monday}" style="font-weight: bold" />
 								</f:facet>
 								<f:facet name="input">
-
-									<h:inputText id="mon" value="#{row.hours[2]}" size="2"
-										converterMessage="must be a number"
-										validatorMessage="must be between 0 and 24">
+									<h:inputText id="mon" value="#{row.monday}" size="2" converterMessage="must be a number" validatorMessage="must be between 0 and 24">
 									</h:inputText>
 									<h:message for="mon" styleClass="errorMessage" />
 								</f:facet>
@@ -175,19 +137,13 @@
 								<h:outputText value="#{timesheetManager.getTotalHoursForDay(2)}" />
 							</f:facet>
 						</p:column>
-
-
-
 						<p:column width="60" headerText="#{msgs.tuesday}">
 							<p:cellEditor>
 								<f:facet name="output">
-									<h:outputText value="#{row.hours[3]}" style="font-weight: bold" />
+									<h:outputText value="#{row.tuesday}" style="font-weight: bold" />
 								</f:facet>
 								<f:facet name="input">
-
-									<h:inputText id="tue" value="#{row.hours[3]}" size="2"
-										converterMessage="must be a number"
-										validatorMessage="must be between 0 and 24">
+									<h:inputText id="tue" value="#{row.tuesday}" size="2" converterMessage="must be a number" validatorMessage="must be between 0 and 24">
 									</h:inputText>
 									<h:message for="tue" styleClass="errorMessage" />
 								</f:facet>
@@ -196,19 +152,13 @@
 								<h:outputText value="#{timesheetManager.getTotalHoursForDay(3)}" />
 							</f:facet>
 						</p:column>
-
-
-
 						<p:column width="60" headerText="#{msgs.wednesday}">
 							<p:cellEditor>
 								<f:facet name="output">
-									<h:outputText value="#{row.hours[4]}" style="font-weight: bold" />
+									<h:outputText value="#{row.wednesday}" style="font-weight: bold" />
 								</f:facet>
 								<f:facet name="input">
-
-									<h:inputText id="wed" value="#{row.hours[4]}" size="2"
-										converterMessage="must be a number"
-										validatorMessage="must be between 0 and 24">
+									<h:inputText id="wed" value="#{row.wednesday}" size="2"	converterMessage="must be a number" validatorMessage="must be between 0 and 24">
 									</h:inputText>
 									<h:message for="wed" styleClass="errorMessage" />
 								</f:facet>
@@ -217,19 +167,13 @@
 								<h:outputText value="#{timesheetManager.getTotalHoursForDay(4)}" />
 							</f:facet>
 						</p:column>
-
-
-
 						<p:column width="60" headerText="#{msgs.thursday}">
 							<p:cellEditor>
 								<f:facet name="output">
-									<h:outputText value="#{row.hours[5]}" style="font-weight: bold" />
+									<h:outputText value="#{row.thursday}" style="font-weight: bold" />
 								</f:facet>
 								<f:facet name="input">
-
-									<h:inputText id="thur" value="#{row.hours[5]}" size="2"
-										converterMessage="must be a number"
-										validatorMessage="must be between 0 and 24">
+									<h:inputText id="thur" value="#{row.thursday}" size="2" converterMessage="must be a number" validatorMessage="must be between 0 and 24">
 									</h:inputText>
 									<h:message for="thur" styleClass="errorMessage" />
 								</f:facet>
@@ -238,20 +182,13 @@
 								<h:outputText value="#{timesheetManager.getTotalHoursForDay(5)}" />
 							</f:facet>
 						</p:column>
-
-
-
-
 						<p:column width="60" headerText="#{msgs.friday}">
 							<p:cellEditor>
 								<f:facet name="output">
-									<h:outputText value="#{row.hours[6]}" style="font-weight: bold" />
+									<h:outputText value="#{row.friday}" style="font-weight: bold" />
 								</f:facet>
 								<f:facet name="input">
-
-									<h:inputText id="fri" value="#{row.hours[6]}" size="2"
-										converterMessage="must be a number"
-										validatorMessage="must be between 0 and 24">
+									<h:inputText id="fri" value="#{row.friday}" size="2" converterMessage="must be a number" validatorMessage="must be between 0 and 24">
 									</h:inputText>
 									<h:message for="fri" styleClass="errorMessage" />
 								</f:facet>
@@ -260,52 +197,28 @@
 								<h:outputText value="#{timesheetManager.getTotalHoursForDay(6)}" />
 							</f:facet>
 						</p:column>
-
-
-
-
 						<p:column width="160" headerText="#{msgs.notes}">
 							<p:cellEditor>
-
 								<f:facet name="output">
 									<h:outputText value="#{row.notes}" style="font-weight: bold" />
 								</f:facet>
 								<f:facet name="input">
-
 									<h:inputText id="notes" value="#{row.notes}" size="2">
 									</h:inputText>
 									<h:message for="notes" styleClass="errorMessage" />
 								</f:facet>
-
-
 							</p:cellEditor>
-
 						</p:column>
-
-
 						<p:column>
-
 							<p:column>
-								<h:commandLink value="Delete"
-									action="#{timesheetManager.deleteRow(row)}"
-									update="timesheetTable" />
+								<h:commandLink value="Delete" action="#{timesheetManager.deleteRow(row)}" update="timesheetTable" />
 							</p:column>
 						</p:column>
 
-
-
 						<f:facet name="footer">
-							<h:commandButton
-								action="#{tsController.save(empController.getCurrentTimesheet())}"
-								value="Save" />
-							<h:commandButton action="#{timesheetManager.addRowtoUser}"
-								value="Add" update="timesheetTable" />
+							<h:commandButton action="#{timesheetManager.addRowtoUser}" value="Add" update="timesheetTable" />
 						</f:facet>
 					</p:dataTable>
-
-
-
-
 				</div>
 			</h:form>
 		</ui:define>
