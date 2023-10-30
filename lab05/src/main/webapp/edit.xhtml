@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<ui:composition template="templates/template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<h:dataTable value="#{edTableData.names}" var="name">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.editColumn}" style="font-weight: bold" />
+					</f:facet>
+					<h:selectBooleanCheckbox value="#{name.editable}"
+						onclick="submit()" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.ID}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.ID}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.ID}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.fName}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.FName}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.FName}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.lName}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.LName}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.LName}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.mName}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.MName}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.MName}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.add1}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.add1}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.add1}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.add2}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.add2}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.add2}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.city}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.city}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.city}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.state}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.state}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.state}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.zip}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.zip}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.zip}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.phone}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.phone}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.phone}" rendered="#{not name.editable}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msgs.email}" style="font-weight: bold" />
+					</f:facet>
+					<h:inputText value="#{name.email}" rendered="#{name.editable}"
+						style="font-weight: bold" />
+					<h:outputText value="#{name.email}" rendered="#{not name.editable}" />
+				</h:column>
+			</h:dataTable>
+			<h:commandButton value="#{msgs.saveChangesButtonText}"
+				action="#{edTableData.save}" />
+		</h:form>
+	</ui:define>
+	<ui:define name="footer"></ui:define>
+
+</ui:composition>
+</html>
+
