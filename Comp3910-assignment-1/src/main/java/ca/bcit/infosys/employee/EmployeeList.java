@@ -73,7 +73,4 @@ public interface EmployeeList extends Serializable {
      * @param newEmployee the employee to add to the collection
      */
     void addEmployee(Employee newEmployee);
-    
-    void addEmployee(Employee newEmployee, String password);
-
 }

@@ -2,17 +2,12 @@ package ca.bcit.infosys.timesheet;
 
 import java.util.Arrays;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Named;
-
 /**
  * A class representing a single row of a Timesheet.
  *
  * @author Bruce Link
  * @version 2.0
  */
-@Named
-@ApplicationScoped
 public class TimesheetRow implements java.io.Serializable {
 
     /** Timesheet row index for Saturday. */
@@ -289,7 +284,6 @@ public class TimesheetRow implements java.io.Serializable {
     
     /**
      * Get hours array of charges, index is day number.
-     * 각 요일에 대한 시간 값
      * @return hours as array of charges
      */
     public float[] getHours() {
@@ -309,7 +303,6 @@ public class TimesheetRow implements java.io.Serializable {
      * @throws IllegalArgumentException if charges < 0 or > 24
      */
     public void setHours(float[] charges) {
-    	System.out.println("setset");
         for (float charge : charges) {
             if (charge < 0.0 || charge > Timesheet.HOURS_IN_DAY) {
                 throw new IllegalArgumentException("charge is out of " 
@@ -320,7 +313,6 @@ public class TimesheetRow implements java.io.Serializable {
         for (int i = LAST_DAY; i >= FIRST_DAY; i--) {
             result = result * BYTE_BASE + toDecihour(charges[i]);
         }
-        System.out.println(result);
         packedHours = result;
     }
     
@@ -345,7 +337,6 @@ public class TimesheetRow implements java.io.Serializable {
      * @throws IllegalArgumentException if charges < 0 or > 24
      */
     public void setDecihours(int[] charges) {
-    	System.out.println("set");
         for (float charge : charges) {
             if (charge < 0 || charge > Timesheet.DECIHOURS_IN_DAY) {
                 throw new IllegalArgumentException("charge is out of " 
@@ -387,18 +378,5 @@ public class TimesheetRow implements java.io.Serializable {
                 + Arrays.toString(getHours());
     }
     
-    public float getSaturday() {return getHour(SAT);}
-    public void setSaturday(float charge) {setHour(SAT, charge);}
-    public float getSunday() {return getHour(SUN);}
-    public void setSunday(float charge) {setHour(SUN, charge);}    
-    public float getMonday() {return getHour(MON);}
-    public void setMonday(float charge) {setHour(MON, charge);}
-    public float getTuesday() {return getHour(TUE);}
-    public void setTuesday(float charge) {setHour(TUE, charge);}   
-    public float getWednesday() {return getHour(WED);}
-    public void setWednesday(float charge) {setHour(WED, charge);}    
-    public float getThursday() {return getHour(THU);}
-    public void setThursday(float charge) {setHour(THU, charge);}    
-    public float getFriday() {return getHour(FRI);}
-    public void setFriday(float charge) {setHour(FRI, charge);}      
+
 }

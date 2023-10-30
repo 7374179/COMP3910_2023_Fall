@@ -8,7 +8,6 @@ import java.io.Serializable;
  * @author Bruce Link
  * @version 1.1
  */
-
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 11L;
@@ -57,10 +56,9 @@ public class Employee implements Serializable {
      * @param empName the name to set
      */
     public void setName(final String empName) {
-    	System.out.println("set");
         name = empName;
     }
- 
+
     /**
      * empNumber getter.
      * @return the empNumber

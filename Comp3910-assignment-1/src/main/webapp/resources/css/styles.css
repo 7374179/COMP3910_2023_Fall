@@ -1,7 +1,7 @@
 body
 {
-	/* width: 800px;  */
-	/* margin: 0 10%;  */
+	width: 800px;
+	margin: 0 10%;
 	background-color: #F8F8F8;
 }
 
@@ -11,7 +11,7 @@ body
     padding: 10px 15px; /* Some padding */
     text-align: center; /* Centered text */
     border-bottom: 5px solid #000000; /* Blue border at the bottom */
-    width: 100%;
+    width: 140%;
 }
 
 

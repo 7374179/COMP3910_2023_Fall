@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ca.bcit.infosys.employee.Employee;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Named;
 
 /**
  * A class representing a single Timesheet.
@@ -18,9 +16,6 @@ import jakarta.inject.Named;
  * @author Bruce Link
  * @version 2.0
  */
-
-@Named
-@ApplicationScoped
 public class Timesheet implements java.io.Serializable {
 
     /** Number of days in a week. */
@@ -174,9 +169,6 @@ public class Timesheet implements java.io.Serializable {
      * @return the details
      */
     public List<TimesheetRow> getDetails() {
-        System.out.println("Fetching Details: " + details.size());
-        System.out.println("enddate: " + employee);
-
         return details;
     }
 
@@ -364,7 +356,6 @@ public class Timesheet implements java.io.Serializable {
      */
     public void addRow() {
         details.add(new TimesheetRow());
-        System.out.println(details);
     }
     
     @Override
