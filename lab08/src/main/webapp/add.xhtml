@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<h:outputStylesheet library="css" name="styles.css" />
+	<title>#{msgs.supplier}</title>
+</h:head>
+<h:body>
+	<h1>#{msgs.supplier}</h1>
+	<h:form>
+		<h:outputText value="#{msgs.id}" style="font-weight: bold" />: 
+		<h:outputText value="#{supplierListForm.newSupplier.id}" />
+		<br />
+		<h:outputText value="#{msgs.supName}" style="font-weight: bold" />: 
+		<h:inputText id="supplierName"
+			value="#{supplierListForm.newSupplier.name}" size="10"
+			requiredMessage="The name field is required" required="true" />
+		<h:messages for="supplierName" style="color:red; display: inline;" />
+		<br />
+		<h:outputText value="#{msgs.conName}" style="font-weight: bold" />: 
+		<h:inputText id="contactName"
+			value="#{supplierListForm.newSupplier.contactName}" size="10"
+			requiredMessage="The name field is required" required="true" />
+		<h:messages for="contactName" style="color:red; display: inline;" />
+		<br />
+		<h:outputText value="#{msgs.title}" style="font-weight: bold" />: 
+		<h:inputText id="contactTitle"
+			value="#{supplierListForm.newSupplier.contactTitle}" size="10"
+			requiredMessage="The name field is required" required="true" />
+		<h:messages for="contactTitle" style="color:red; display: inline;" />
+		<br />
+		<h:outputText value="#{msgs.address}" style="font-weight: bold" />: 
+		<h:inputText id="address"
+			value="#{supplierListForm.newSupplier.address}" size="10"
+			requiredMessage="The name field is required" required="true" />
+		<h:messages for="address" style="color:red; display: inline;" />
+		<br />
+		<h:outputText value="#{msgs.city}" style="font-weight: bold" />: 
+		<h:inputText id="city" value="#{supplierListForm.newSupplier.city}"
+			size="10" requiredMessage="The name field is required"
+			required="true" />
+		<h:messages for="city" style="color:red; display: inline;" />
+		<br />
+		<h:outputText value="#{msgs.postcode}" style="font-weight: bold" />: 
+		<h:inputText id="postalCode"
+			value="#{supplierListForm.newSupplier.postalCode}" size="10"
+			requiredMessage="The name field is required" required="true" />
+		<h:messages for="postalCode" style="color:red; display: inline;" />
+		<br />
+		<h:outputText value="#{msgs.state}" style="font-weight: bold" />: 
+		<h:inputText value="#{supplierListForm.newSupplier.stateOrProvince}"
+			size="10" />
+		<br />
+		<h:outputText value="#{msgs.country}" style="font-weight: bold" />: 
+		<h:inputText id="country"
+			value="#{supplierListForm.newSupplier.country}" size="10"
+			requiredMessage="The name field is required" required="true" />
+		<h:messages for="country" style="color:red; display: inline;" />
+		<br />
+		<h:outputText value="#{msgs.pNum}" style="font-weight: bold" />: 
+		<h:inputText id="phoneNumber"
+			value="#{supplierListForm.newSupplier.phoneNumber}" size="10"
+			requiredMessage="The name field is required" required="true" />
+		<h:messages for="phoneNumber" style="color:red; display: inline;" />
+		<br />
+		<h:outputText value="#{msgs.fNum}" style="font-weight: bold" />: 
+		<h:inputText value="#{supplierListForm.newSupplier.faxNumber}"
+			size="10" />
+		<br />
+		<h:outputText value="#{msgs.payTerm}" style="font-weight: bold" />: 
+		<h:inputText id="paymentTerms"
+			value="#{supplierListForm.newSupplier.paymentTerms}" size="10"
+			requiredMessage="The name field is required" required="true" />
+		<h:messages for="paymentTerms" style="color:red; display: inline;" />
+
+		<br />
+		<h:outputText value="#{msgs.email}" style="font-weight: bold" />: 
+		<h:inputText value="#{supplierListForm.newSupplier.emailAddress}"
+			size="10" />
+		<br />
+		<h:outputText value="#{msgs.notes}" style="font-weight: bold" />: 
+		<h:inputText value="#{supplierListForm.newSupplier.notes}" size="10" />
+		<br />
+		<h:commandButton value="#{msgs.save}"
+			action="#{supplierListForm.saveNewSupplier}" />
+		<br />
+
+	</h:form>
+</h:body>
+</html>
