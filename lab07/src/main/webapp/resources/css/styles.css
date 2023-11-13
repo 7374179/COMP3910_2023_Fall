@@ -1,0 +1,16 @@
+body
+{
+	width: 800px;
+	margin: 0 auto;
+	background-color: #F8F8F8;
+}
+
+
+.msgs-bold {
+    font-weight: bold;
+}
+
+.submit-box {
+	background-color: rgb(235, 235, 237);
+	border: #F8F8F8;
+}

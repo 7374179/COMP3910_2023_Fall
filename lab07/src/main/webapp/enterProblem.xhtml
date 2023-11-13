@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<title>#{msgs.title}</title>
+	<h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel styleClass="msgs-bold" for="heading"
+				value="#{msgs.headingSoft}" />
+			<h:panelGroup>
+				<h:panelGrid columns="2">
+					<h:outputLabel styleClass="msgs-bold" for="number"
+						value="#{msgs.number}" />
+					<h:panelGroup>
+						<h:inputText id="number" value="#{problemReport.number}"
+							style="width: 80px" converterMessage="must be a number"
+							requiredMessage="The number field is required" required="true">
+							<f:convertNumber type="number" />
+						</h:inputText>
+						<h:messages for="number" style="color:red; display: inline;" />
+					</h:panelGroup>
+
+					<h:outputLabel styleClass="msgs-bold" for="date"
+						value="#{msgs.date}" />
+					<h:panelGroup>
+						<h:inputText id="date" value="#{problemReport.date}"
+							style="width:160"
+							converterMessage="enter the date in the format 'd MMM yyyy'"
+							requiredMessage="The date field is required" required="true">
+							<f:convertDateTime pattern="d MMM yyyy" locale="en" />
+						</h:inputText>
+						<h:messages for="date" style="color:red; display: inline;" />
+					</h:panelGroup>
+				</h:panelGrid>
+			</h:panelGroup>
+
+			<h:panelGroup>
+				<h:outputLabel styleClass="msgs-bold" for="projectName"
+					value="#{msgs.projectName}" />
+				<h:inputText id="projectName" value="#{problemReport.project.name}"
+					style="width: 200px"
+					requiredMessage="The project field is required" required="true">
+				</h:inputText>
+				<h:messages for="projectName" style="color:red; display: inline;" />
+			</h:panelGroup>
+
+			<h:panelGroup>
+				<h:outputLabel styleClass="msgs-bold" for="originator"
+					value="#{msgs.originator}" />
+				<h:inputText id="originator" value="#{problemReport.originator}"
+					requiredMessage="The originator field is required" required="true">
+				</h:inputText>
+				<h:messages for="originator" style="color:red; display: inline;" />
+			</h:panelGroup>
+		</h:panelGrid>
+
+		<h:panelGrid columns="2">
+			<h:panelGroup>
+				<h:outputLabel styleClass="msgs-bold" for="tt" value="#{msgs.tt}" />
+				<h:inputText id="tt" value="#{problemReport.project.title}"
+					style="width: 500px" requiredMessage="The title field is required"
+					required="true">
+				</h:inputText>
+				<h:messages for="tt" style="color:red; display: inline;" />
+			</h:panelGroup>
+			<br />
+
+			<h:panelGroup>
+				<h:outputLabel styleClass="msgs-bold" for="ma" value="#{msgs.ma}" />
+				<h:inputText id="ma" value="#{problemReport.ma}"
+					style="width: 500px"
+					requiredMessage="The modules affected field is required"
+					required="true">
+				</h:inputText>
+				<h:messages for="ma" style="color:red; display: inline;" />
+			</h:panelGroup>
+		</h:panelGrid>
+
+		<h:outputLabel styleClass="msgs-bold" for="description"
+			value="#{msgs.description}: " />
+		<h:outputLabel value="#{msgs.inScope}" />
+		<h:selectBooleanCheckbox value="#{problemReport.scope}" />
+		<br />
+		<h:inputTextarea id="description" value="#{problemReport.description}"
+			cols="100" rows="11"
+			requiredMessage="The description field is required" required="true">
+		</h:inputTextarea>
+		<h:messages for="description" style="color:red; display: inline;" />
+		<br />
+		<h:outputLabel styleClass="msgs-bold" for="solution"
+			value="#{msgs.solution}" />
+		<br />
+		<h:inputTextarea id="solution" value="#{problemReport.solution}"
+			cols="100" rows="11"
+			requiredMessage="The description field is required" required="true">
+		</h:inputTextarea>
+		<h:messages for="solution" style="color:red; display: inline;" />
+		<h:panelGrid columns="2">
+			<h:panelGroup>
+				<h:outputLabel styleClass="msgs-bold" for="priority"
+					value="#{msgs.priority}" />
+				<h:selectOneMenu id="priority" value="#{problemReport.priority}"
+					requiredMessage="The priority field is selected">
+					<f:selectItem itemValue="" itemLabel="--- Select ---"
+						noSelectionOption="true" />
+					<f:selectItem itemValue="critical" itemLabel="critical" />
+					<f:selectItem itemValue="high" itemLabel="high" />
+					<f:selectItem itemValue="medium" itemLabel="medium" />
+					<f:selectItem itemValue="low" itemLabel="low" />
+					<f:validateRequired message="select" />
+				</h:selectOneMenu>
+				<h:messages for="description" style="color:red; display: inline;" />
+
+			</h:panelGroup>
+			<h:panelGroup>
+				<h:outputLabel styleClass="msgs-bold" for="severity"
+					value="#{msgs.severity}" />
+				<h:selectOneMenu id="severity" value="#{problemReport.severity}"
+					requiredMessage="The severity field is selected">
+					<f:selectItem itemValue="" itemLabel="--- Select ---"
+						noSelectionOption="true" />
+					<f:selectItem itemValue="high" itemLabel="high" />
+					<f:selectItem itemValue="medium" itemLabel="medium" />
+					<f:selectItem itemValue="low" itemLabel="low" />
+					<f:validateRequired message="select" />
+				</h:selectOneMenu>
+				<h:messages for="description" style="color:red; display: inline;" />
+			</h:panelGroup>
+			<h:panelGroup>
+				<h:outputLabel styleClass="msgs-bold" for="dateAssigned"
+					value="#{msgs.dateAssigned}" />
+				<h:inputText id="dateAssigned" value="#{problemReport.dateAssigned}"
+					style="width: 140px"
+					converterMessage="enter the date in the format 'd MMM yyyy'"
+					requiredMessage="The Date Assigned field is required"
+					required="true">
+					<f:convertDateTime pattern="d MMM yyyy" locale="en" />
+				</h:inputText>
+				<h:messages for="dateAssigned" style="color:red; display: inline;" />
+			</h:panelGroup>
+			<h:panelGroup>
+				<h:outputLabel styleClass="msgs-bold" for="dateFixed"
+					value="#{msgs.dateFixed}" />
+				<h:inputText id="dateFixed" value="#{problemReport.dateFixed}"
+					style="width: 130px"
+					converterMessage="enter the date in the format 'd MMM yyyy'"
+					requiredMessage="The Date Fixed is required" required="true">
+					<f:convertDateTime pattern="d MMM yyyy" locale="en" />
+				</h:inputText>
+				<h:messages for="dateFixed" style="color:red; display: inline;" />
+			</h:panelGroup>
+		</h:panelGrid>
+		<p>
+			<h:commandButton value="#{msgs.submit}" action="displayProblem" />
+		</p>
+	</h:form>
+</h:body>
+</html>
